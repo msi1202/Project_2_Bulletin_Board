@@ -1,6 +1,6 @@
 # CS4065 Project 2 - Bulletin Board System
 
-**Students:** [Your Name], [Partner 1 Name], [Partner 2 Name]
+**Students:** Joshua Jerin, Satya Indukuri, Mohamed Sameer Imam
 
 ## Project Overview
 
@@ -65,7 +65,7 @@ The client-server communication uses a JSON-based protocol over TCP sockets:
 No installation is required. Simply ensure Python 3 is installed on your system:
 
 ```bash
-python3 --version
+python --version
 ```
 
 ## Compilation
@@ -84,18 +84,18 @@ chmod +x client.py
 To start the server on the default port (8888):
 
 ```bash
-python3 server.py
+python server.py
 ```
 
 To start the server on a custom port:
 
 ```bash
-python3 server.py <port_number>
+python server.py <port_number>
 ```
 
 Example:
 ```bash
-python3 server.py 9000
+python server.py 9000
 ```
 
 The server will display:
@@ -109,7 +109,7 @@ The server will display:
 #### Interactive Mode (Recommended)
 
 ```bash
-python3 client.py
+python client.py
 ```
 
 Then use the `%connect` command to connect:
@@ -123,12 +123,12 @@ Enter your username: alice
 You can also connect directly by providing arguments:
 
 ```bash
-python3 client.py <host> <port> <username>
+python client.py <host> <port> <username>
 ```
 
 Example:
 ```bash
-python3 client.py localhost 8888 alice
+python client.py localhost 8888 alice
 ```
 
 ### Available Commands
@@ -341,19 +341,19 @@ The implementation includes comprehensive error handling for:
 
 1. Start the server:
    ```bash
-   python3 server.py
+   python server.py
    ```
 
 2. Open 3 terminal windows and start 3 clients:
    ```bash
    # Terminal 1
-   python3 client.py localhost 8888 alice
+   python client.py localhost 8888 alice
 
    # Terminal 2
-   python3 client.py localhost 8888 bob
+   python client.py localhost 8888 bob
 
    # Terminal 3
-   python3 client.py localhost 8888 charlie
+   python client.py localhost 8888 charlie
    ```
 
 3. Test the following scenarios:
@@ -413,28 +413,6 @@ The implementation includes comprehensive error handling for:
 
 **Solution:** Added prompt re-display after notifications using `flush=True` and repositioning the cursor. This provides a better user experience when notifications arrive during typing.
 
-## Limitations and Future Enhancements
-
-### Current Limitations
-- No persistent storage (messages are lost when server restarts)
-- No user authentication or password protection
-- Message size limited by buffer size
-- No message editing or deletion
-- No private direct messaging between users
-- No message search functionality
-
-### Possible Future Enhancements
-- Database integration for persistent storage
-- User authentication system
-- Message pagination for large message boards
-- File attachment support
-- Private messaging between users
-- Message reactions and likes
-- User roles and permissions
-- Group creation by users
-- Message formatting (bold, italic, etc.)
-- GUI implementation using tkinter or PyQt
-
 ## File Structure
 
 ```
@@ -445,83 +423,3 @@ project2/
 └── Makefile           # Build automation (optional)
 ```
 
-## Code Documentation
-
-Both `server.py` and `client.py` are well-documented with:
-- Module-level docstrings
-- Class docstrings explaining purpose
-- Method docstrings for all functions
-- Inline comments for complex logic
-- Type hints for better code clarity
-
-## Performance Considerations
-
-- Server can handle multiple concurrent clients efficiently
-- Thread-per-client model scales well for moderate user counts (< 100)
-- JSON parsing is fast enough for real-time messaging
-- Lock contention is minimized by keeping critical sections short
-- Memory usage is proportional to number of messages and users
-
-## Security Considerations
-
-**Note:** This implementation is for educational purposes only and is NOT production-ready.
-
-Security issues that should be addressed for production use:
-- No input validation or sanitization
-- Susceptible to JSON injection attacks
-- No rate limiting or DoS protection
-- No encryption (messages sent in plain text)
-- No authentication or authorization
-- No audit logging
-
-## Grading Checklist
-
-### Functionality (70%)
-
-**Part 1 (40%):**
-- [x] Server listens on non-system port
-- [x] Client connects and registers with username
-- [x] Users can join the public group
-- [x] New users see last 2 messages
-- [x] List of users displayed when joining
-- [x] Users notified when others join/leave
-- [x] Post messages visible to all users
-- [x] Retrieve message content by ID
-- [x] Leave group functionality
-- [x] Messages displayed in correct format
-
-**Part 2 (30%):**
-- [x] List 5 available groups
-- [x] Join multiple groups simultaneously
-- [x] Post messages to specific groups
-- [x] View users only in joined groups
-- [x] View messages only from joined groups
-- [x] Leave specific groups
-- [x] Group isolation (users in one group can't see others)
-
-### Usability (15%)
-- [x] User-friendly command interface
-- [x] All required commands implemented
-- [x] Clear command syntax with % prefix
-- [x] Help command available
-- [x] Informative error messages
-- [x] Real-time notifications
-
-### Documentation (15%)
-- [x] Code well-documented with docstrings
-- [x] Expressive variable names
-- [x] README with compilation/running instructions
-- [x] Usage examples provided
-- [x] Major issues documented
-
-## Contact and Support
-
-For questions or issues, please contact the course instructor or teaching assistants.
-
-## License
-
-This project is submitted as part of CS4065 coursework and is subject to university academic integrity policies.
-
----
-
-**Last Updated:** December 1, 2025

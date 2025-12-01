@@ -4,7 +4,7 @@
 
 ### Step 1: Start the Server
 ```bash
-python3 server.py
+python server.py
 ```
 or
 ```bash
@@ -13,7 +13,7 @@ make server
 
 ### Step 2: Start a Client (in a new terminal)
 ```bash
-python3 client.py
+python client.py
 ```
 
 ### Step 3: Connect to Server
@@ -43,19 +43,19 @@ alice> %grouppost tech "Python Question" "What's your favorite Python feature?"
 
 ### Terminal 1 (Server)
 ```bash
-python3 server.py
+python server.py
 ```
 
 ### Terminal 2 (Client 1)
 ```bash
-python3 client.py localhost 8888 alice
+python client.py localhost 8888 alice
 alice> %join
 alice> %post "Hello" "This is Alice"
 ```
 
 ### Terminal 3 (Client 2)
 ```bash
-python3 client.py localhost 8888 bob
+python client.py localhost 8888 bob
 bob> %join
 bob> %users
 bob> %message 1
@@ -64,7 +64,7 @@ bob> %post "Re: Hello" "Hi Alice!"
 
 ### Terminal 4 (Client 3)
 ```bash
-python3 client.py localhost 8888 charlie
+python client.py localhost 8888 charlie
 charlie> %groups
 charlie> %groupjoin tech
 charlie> %grouppost tech "Welcome" "Hello tech group!"
@@ -100,17 +100,17 @@ charlie> %grouppost tech "Welcome" "Hello tech group!"
 Run the test script to see automated demo:
 ```bash
 # Terminal 1: Start server
-python3 server.py
+python server.py
 
 # Terminal 2: Run test
-python3 test_demo.py
+python test_demo.py
 ```
 
 ## Tips
 
 1. **Run server first** - Always start server before clients
 2. **Multiple terminals** - Open separate terminals for each client
-3. **Port conflicts** - If port 8888 is busy, use: `python3 server.py 9000`
+3. **Port conflicts** - If port 8888 is busy, use: `python server.py 9000`
 4. **Help command** - Type `help` anytime in the client
 5. **Notifications** - You'll see real-time updates when others join/post
 
@@ -126,4 +126,4 @@ python3 test_demo.py
 - **Solution:** Join the group first with `%join` or `%groupjoin <id>`
 
 **Problem:** Port already in use
-- **Solution:** Use a different port: `python3 server.py 9000`
+- **Solution:** Use a different port: `python server.py 9000`
