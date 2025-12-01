@@ -337,6 +337,17 @@ The implementation includes comprehensive error handling for:
 
 ## Testing
 
+### Automated Test
+
+Run the test script to see automated demo:
+```bash
+# Terminal 1: Start server
+python server.py
+
+# Terminal 2: Run test
+python test_demo.py
+```
+
 ### Testing Part 1 (Public Message Board)
 
 1. Start the server:
@@ -385,6 +396,20 @@ The implementation includes comprehensive error handling for:
 4. Post messages rapidly from multiple clients
 5. Verify message ordering and delivery
 6. Test disconnecting clients while others are active
+
+## Troubleshooting
+
+**Problem:** "Connection refused"
+- **Solution:** Make sure server is running first
+
+**Problem:** "Username already exists"
+- **Solution:** Choose a different username
+
+**Problem:** "Not a member of this group"
+- **Solution:** Join the group first with `%join` or `%groupjoin <id>`
+
+**Problem:** Port already in use
+- **Solution:** Use a different port: `python server.py 9000`
 
 ## Major Issues and Solutions
 
